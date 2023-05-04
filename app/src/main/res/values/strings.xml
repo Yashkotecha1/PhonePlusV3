@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PhonePlusV3</string>
+    <string-array name="planets_array">
+        <item>All</item>
+        <item>Brand Name</item>
+        <item>Qty</item>
+        <item>Imei</item>
+        <item>Color</item>
+        <item>Date</item>
+    </string-array>
+</resources>
