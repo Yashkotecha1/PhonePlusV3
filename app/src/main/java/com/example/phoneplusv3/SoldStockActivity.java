@@ -15,7 +15,7 @@ public class SoldStockActivity extends AppCompatActivity {
 
     RecyclerView recycleId;
     private SoldStockDao dataDao ;
-    com.example.phoneplusv2.SoldStockAdapter soldStockAdapter;
+    com.example.phoneplusv3.SoldStockAdapter soldStockAdapter;
     List<SoldStockModel> list = new ArrayList<>();
 
     @Override
@@ -37,7 +37,7 @@ public class SoldStockActivity extends AppCompatActivity {
         }
         else {
 
-            soldStockAdapter = new com.example.phoneplusv2.SoldStockAdapter(list);
+            soldStockAdapter = new com.example.phoneplusv3.SoldStockAdapter(list);
             recycleId.setHasFixedSize(true);
             recycleId.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, true));
             recycleId.setAdapter(soldStockAdapter);
