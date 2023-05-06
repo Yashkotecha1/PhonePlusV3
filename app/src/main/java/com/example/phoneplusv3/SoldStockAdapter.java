@@ -56,21 +56,25 @@ public class SoldStockAdapter
     public void onBindViewHolder(@NonNull SoldStockAdapter.ViewHolder holder, int position) {
 
         holder.name.setText(""+soldStockModels.get(position).getBrandName()+" "+soldStockModels.get(position).getBrandType());
-        holder.price.setText(""+soldStockModels.get(position).getPrice());
-        holder.qty.setText(""+soldStockModels.get(position).getQty());
-        holder.imei.setText(""+soldStockModels.get(position).getImeiNumber());
-        holder.memory.setText(""+soldStockModels.get(position).getRam()+" / "+soldStockModels.get(position).getMemory());
-        holder.color.setText(""+soldStockModels.get(position).getColor());
+        holder.price.setText("Price: \t"+soldStockModels.get(position).getPrice()+"₹");
+        holder.qty.setText("Qty: \t"+soldStockModels.get(position).getQty());
+        holder.imei.setText("Imei: \t"+soldStockModels.get(position).getImeiNumber());
+        if (soldStockModels.get(position).getBrandName().equals("Iphone")) {
+            holder.memory.setText("" + soldStockModels.get(position).getMemory() + " GB");
+        } else {
+
+            holder.memory.setText("" + soldStockModels.get(position).getRam() + " / " + soldStockModels.get(position).getMemory());
+        }
+        holder.color.setText("Color: \t"+soldStockModels.get(position).getColor());
         holder.img.setImageDrawable(Drawable.createFromPath(String.valueOf(soldStockModels.get(position).getImg())));
-        holder.totalNetPrice.setText(""+soldStockModels.get(position).getSoldPrice()*soldStockModels.get(position).getQty());
+        holder.totalNetPrice.setText("Total price: \t"+soldStockModels.get(position).getSoldPrice()*soldStockModels.get(position).getQty()+"₹");
 
-        holder.dateTime.setText(""+soldStockModels.get(position).getDate());
-
+        holder.dateTime.setText("Date: \t"+soldStockModels.get(position).getDate());
 
         if (soldStockModels.get(position).getSoldPrice() != 0)
         {
             holder.Soldprice.setVisibility(View.VISIBLE);
-            holder.Soldprice.setText(""+soldStockModels.get(position).getSoldPrice());
+            holder.Soldprice.setText("Sold Price: \t"+soldStockModels.get(position).getSoldPrice()+"₹");
         }
 
         holder.sold.setVisibility(View.GONE);
