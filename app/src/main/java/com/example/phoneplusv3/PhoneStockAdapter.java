@@ -82,15 +82,6 @@ public class PhoneStockAdapter extends RecyclerView.Adapter<PhoneStockAdapter.Vi
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), SoldStockDialog.class);
                 i.putExtra("id", phoneStockModel.get(position).getId());
-                i.putExtra("name", phoneStockModel.get(position). getBrandName());
-                i.putExtra("type", phoneStockModel.get(position).getBrandType());
-                i.putExtra("qty", phoneStockModel.get(position).getQty());
-                i.putExtra("memory", phoneStockModel.get(position).getMemory());
-                i.putExtra("price", phoneStockModel.get(position).getPrice());
-                i.putExtra("imei", phoneStockModel.get(position).getImeiNumber());
-                i.putExtra("color", phoneStockModel.get(position).getColor());
-                i.putExtra("msg", phoneStockModel.get(position).getMessage());
-                i.putExtra("ram", phoneStockModel.get(position).getRam());
                 view.getContext().startActivity(i);
 
             }
