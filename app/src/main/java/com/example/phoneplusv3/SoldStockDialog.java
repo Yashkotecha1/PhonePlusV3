@@ -5,6 +5,7 @@ import androidx.room.Room;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,11 +47,15 @@ public class SoldStockDialog extends AppCompatActivity {
         brandName = stockModel.getBrandName();
         FindViewByID();
         if (brandName.equals("Iphone")) {
+            txt_brandName.setText("Apple");
+            txt_brandType.setText(""+stockModel.getBrandName()+"   "+stockModel.getBrandType());
             ram.setVisibility(View.GONE);
             txt_ram.setVisibility(View.GONE);
             selce.setVisibility(View.GONE);
 
         } else {
+            txt_brandName.setText(""+stockModel.getBrandName());
+            txt_brandType.setText(""+stockModel.getBrandType());
             txt_ram.setVisibility(View.VISIBLE);
             selce.setVisibility(View.VISIBLE);
             txt_ram.setText(""+stockModel.getRam());
@@ -79,11 +84,7 @@ public class SoldStockDialog extends AppCompatActivity {
 
     private void Body() {
 
-
         System.out.println("  " + stockModel.getBrandName() + " " + stockModel.getBrandType() + " " + stockModel.getPrice());
-
-
-
 
         submitinq.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,8 +136,8 @@ public class SoldStockDialog extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void setTextData()
     {
-        txt_brandName.setText(""+stockModel.getBrandName());
-        txt_brandType.setText(""+stockModel.getBrandType());
+        cameraBtn.setBackgroundResource(R.color.white);
+        cameraBtn.setImageDrawable(Drawable.createFromPath(String.valueOf(stockModel.getImg())));
         txt_imeiNumber.setText(""+stockModel.getImeiNumber());
         txt_qtyname.setText(""+stockModel.getQty());
         txt_message.setText(""+stockModel.getMessage());

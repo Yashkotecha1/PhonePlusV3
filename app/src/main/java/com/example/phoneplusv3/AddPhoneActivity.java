@@ -79,6 +79,7 @@ public class AddPhoneActivity extends AppCompatActivity {
 
         FindViewById();
         if (brandName.equals("Iphone")) {
+            txt_brandName.setText("Apple");
             ram.setVisibility(View.GONE);
             txt_ram.setVisibility(View.GONE);
             selce.setVisibility(View.GONE);
@@ -151,9 +152,7 @@ public class AddPhoneActivity extends AppCompatActivity {
 
 
         dataDao.insertAll(phoneStockModel1);
-//        Intent i = new Intent(AddPhoneActivity.this, PhoneStockActivity.class);
-//        System.out.println("   " + txt_brandName.getText().toString() + " " + type);
-//        startActivity(i);
+
         finish();
     }
 
@@ -208,14 +207,10 @@ public class AddPhoneActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
                 cameraBtn.setBackgroundResource(R.color.white);
                 cameraBtn.setImageDrawable(Drawable.createFromPath(file.toString()));
                 phoneStockModel1.setImg(file.toString());
 
-
-//            phoneStockModel1.setImg(String.valueOf(photo));
-//            cameraBtn.setImageBitmap(photo);
 
             }
         }
