@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PhonePlusV3</string>
+    <string name="app_name">Stock Book</string>
     <string-array name="planets_array">
         <item>All</item>
         <item>Brand Name</item>
