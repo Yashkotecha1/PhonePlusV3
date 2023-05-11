@@ -96,7 +96,7 @@ public class SoldStockDialog extends AppCompatActivity {
                 soldStockModel.setImg(stockModel.getImg());
                 soldStockModel.setMemory(stockModel.getMemory());
                 soldStockModel.setMessage(stockModel.getMessage());
-                soldStockModel.setPrice(stockModel.getPrice());
+                soldStockModel.setPrice(stockModel.getTotalPurchasePrice());
                 soldStockModel.setSoldPrice(Integer.parseInt(txt_price.getText().toString()));
                 soldStockModel.setQty(Integer.parseInt(txt_qtyname.getText().toString()));
                 soldStockModel.setColor(stockModel.getColor());
@@ -104,7 +104,7 @@ public class SoldStockDialog extends AppCompatActivity {
                 soldStockModel.setRam(stockModel.getRam());
                 soldStockModel.setTotalPurchasePrice(soldStockModel.getSoldPrice() * soldStockModel.getQty());
 
-                profitLossModel.setPurchasePrice(stockModel.getPrice());
+                profitLossModel.setPurchasePrice(stockModel.getPrice()*stockModel.getQty());
                 profitLossModel.setBrandName(stockModel.getBrandName());
                 profitLossModel.setTotalQty(Integer.parseInt(txt_qtyname.getText().toString()));
                 profitLossModel.setSellPrice(soldStockModel.getSoldPrice() * soldStockModel.getQty());

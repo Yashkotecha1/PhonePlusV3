@@ -100,8 +100,6 @@ public class AddPhoneActivity extends AppCompatActivity {
 
                 Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 // Start the activity with camera_intent, and request pic id
-
-
                 startActivityForResult(camera_intent, pic_id);
             }
         });

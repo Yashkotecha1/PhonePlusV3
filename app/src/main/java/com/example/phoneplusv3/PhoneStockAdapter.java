@@ -1,14 +1,9 @@
 package com.example.phoneplusv3;
 
-
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import java.io.File;
 import java.util.List;
-import java.util.Objects;
 
 public class PhoneStockAdapter extends RecyclerView.Adapter<PhoneStockAdapter.ViewHolder> {
 
@@ -61,17 +54,17 @@ public class PhoneStockAdapter extends RecyclerView.Adapter<PhoneStockAdapter.Vi
 
 
         holder.name.setText("" + phoneStockModel.get(position).getBrandName() + " " + phoneStockModel.get(position).getBrandType());
-        holder.price.setText("Price- \t\t" + phoneStockModel.get(position).getPrice());
+        holder.price.setText("Price- \t\t" + phoneStockModel.get(position).getPrice()+"₹");
         holder.qty.setText("Qty- \t\t" + phoneStockModel.get(position).getQty());
         holder.imei.setText("Imei- \t\t" + phoneStockModel.get(position).getImeiNumber());
         if (phoneStockModel.get(position).getBrandName().equals("Iphone")) {
             holder.memory.setText("" + phoneStockModel.get(position).getMemory() + " GB");
         } else {
 
-            holder.memory.setText("" + phoneStockModel.get(position).getRam() + " / " + phoneStockModel.get(position).getMemory());
+            holder.memory.setText("Storage-\t\t " + phoneStockModel.get(position).getRam() + " / " + phoneStockModel.get(position).getMemory()+" GB");
         }
         holder.color.setText("Color-\t\t" + phoneStockModel.get(position).getColor());
-        holder.totalNetPrice.setText("Total: \t" + phoneStockModel.get(position).getPrice() * phoneStockModel.get(position).getQty());
+        holder.totalNetPrice.setText("Total: \t" + phoneStockModel.get(position).getPrice() * phoneStockModel.get(position).getQty()+"₹");
         holder.date.setText("Date- \t" + phoneStockModel.get(position).getDate());
 
         holder.img.setImageDrawable(Drawable.createFromPath(String.valueOf(phoneStockModel.get(position).getImg())));
