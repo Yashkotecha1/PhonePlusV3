@@ -59,7 +59,7 @@ public class SoldStockAdapter
         holder.price.setText("Price: \t"+soldStockModels.get(position).getPrice()+"₹");
         holder.qty.setText("Qty: \t"+soldStockModels.get(position).getQty());
         holder.imei.setText("Imei: \t"+soldStockModels.get(position).getImeiNumber());
-        if (soldStockModels.get(position).getBrandName().equals("Iphone")) {
+        if (soldStockModels.get(position).getBrandName().equals("Apple")) {
             holder.memory.setText("" + soldStockModels.get(position).getMemory() + " GB");
         } else {
 

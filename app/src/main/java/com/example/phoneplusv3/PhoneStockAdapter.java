@@ -57,7 +57,7 @@ public class PhoneStockAdapter extends RecyclerView.Adapter<PhoneStockAdapter.Vi
         holder.price.setText("Price- \t\t" + phoneStockModel.get(position).getPrice()+"₹");
         holder.qty.setText("Qty- \t\t" + phoneStockModel.get(position).getQty());
         holder.imei.setText("Imei- \t\t" + phoneStockModel.get(position).getImeiNumber());
-        if (phoneStockModel.get(position).getBrandName().equals("Iphone")) {
+        if (phoneStockModel.get(position).getBrandName().equals("Apple")) {
             holder.memory.setText("" + phoneStockModel.get(position).getMemory() + " GB");
         } else {
 

@@ -46,7 +46,7 @@ public class SoldStockDialog extends AppCompatActivity {
 
         brandName = stockModel.getBrandName();
         FindViewByID();
-        if (brandName.equals("Iphone")) {
+        if (brandName.equals("Apple")) {
             txt_brandName.setText("Apple");
             txt_brandType.setText(""+stockModel.getBrandName()+"   "+stockModel.getBrandType());
             ram.setVisibility(View.GONE);

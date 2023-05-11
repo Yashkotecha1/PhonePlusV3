@@ -64,6 +64,7 @@ public class AddPhoneActivity extends AppCompatActivity {
 
     File file;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +79,7 @@ public class AddPhoneActivity extends AppCompatActivity {
 
 
         FindViewById();
-        if (brandName.equals("Iphone")) {
+        if (brandName.equals("Apple")) {
             txt_brandName.setText("Apple");
             ram.setVisibility(View.GONE);
             txt_ram.setVisibility(View.GONE);

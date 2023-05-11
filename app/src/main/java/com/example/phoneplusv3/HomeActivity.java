@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
         ArrayList<BrandModel> brandModelArrayList = new ArrayList<>();
 
-        brandModelArrayList.add(new BrandModel("Iphone",R.drawable.iphonelogo));
+        brandModelArrayList.add(new BrandModel("Apple",R.drawable.iphonelogo));
         brandModelArrayList.add(new BrandModel("Samsung",R.drawable.samsung));
         brandModelArrayList.add(new BrandModel("Oppo",R.drawable.oppologo));
         brandModelArrayList.add(new BrandModel("Vivo",R.drawable.vivologo));
