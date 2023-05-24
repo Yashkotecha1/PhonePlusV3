@@ -105,7 +105,7 @@ public class ProfitAndLossActivity extends AppCompatActivity {
 
         // adding color to our bar data set.
         if (profitLoss>phoneStockModel.getTotalPurchasePrice()) {
-            barDataSet.setColors(Color.RED);
+            barDataSet.setColors(Color.GREEN);
         }
         else {
             barDataSet.setColors(Color.GREEN);
@@ -116,6 +116,8 @@ public class ProfitAndLossActivity extends AppCompatActivity {
 
         // setting text size
         barDataSet.setValueTextSize(16f);
+        barChart.invalidate();
+        barChart.animateY(3000);
         barChart.getDescription().setEnabled(false);
     }
 
@@ -129,9 +131,9 @@ public class ProfitAndLossActivity extends AppCompatActivity {
 
         for (ProfitLossModel p :profitLossModels )
         {
-            profitLoss = p.getSellPrice()-p.getPurchasePrice();
-            System.out.println(p.getSellPrice()-p.getPurchasePrice() + "--------------------------"+p.getId());
-            barEntriesArrayList.add(new BarEntry(p.getId(), p.getSellPrice()-p.getPurchasePrice()));
+            profitLoss = p.getPurchasePrice()-p.getSellPrice();
+            System.out.println(profitLoss + "--------------------------"+p.getId());
+            barEntriesArrayList.add(new BarEntry(p.getId(), profitLoss));
 
         }
 
