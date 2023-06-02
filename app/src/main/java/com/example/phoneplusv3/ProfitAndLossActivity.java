@@ -62,25 +62,9 @@ public class ProfitAndLossActivity extends AppCompatActivity {
 
     }
 
-    private void Body() {
-        list.addAll(dataDao.getAll());
-        list1.addAll(addPhoneDao.getAll());
-        profitLossModels.addAll(profitLossDao.getAll());
-
-        if (profitLossModels.size() == 0) {
-            recycleId.setVisibility(View.GONE);
-        } else {
-
-            soldStockAdapter = new ProfitLossAdapter(profitLossModels);
-            recycleId.setHasFixedSize(true);
-            recycleId.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, true));
-            recycleId.setAdapter(soldStockAdapter);
-        }
-    }
     @Override
     protected void onResume() {
         super.onResume();
-//        Body();
         chart();
     }
 
